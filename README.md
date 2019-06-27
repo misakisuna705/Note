@@ -90,6 +90,20 @@ int main(void) {
 }
 ```
 
+```c
+#include <stdio.h>
+
+int main(void) {
+    int num;
+
+    scanf("%*d %*d %d", &num);
+
+    printf("%d\n", num);
+
+    return 0;
+}
+```
+
 -   運算子
 
 ```c
