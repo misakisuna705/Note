@@ -3,46 +3,32 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Coding Style](#coding-style)
-    - [global 命名需完整，local 命名需簡潔](#global-命名需完整local-命名需簡潔)
-    - [enum / macro / constant 使用全大寫](#enum--macro--constant-使用全大寫)
-        + [enum](#enum)
-        + [macro](#macro)
-        + [constant](#constant)
+    - [命名](#命名)
+        + [內容](#內容)
+    - [大小寫](#大小寫)
 
 <!-- vim-markdown-toc -->
 
 ## Coding Style
 
-### global 命名需完整，local 命名需簡潔
+### 命名
 
-|  global   |      local      |
-| :-------: | :-------------: |
-|   class   | member function |
-| structure | member variable |
-| function  |                 |
-|   enum    |                 |
-|   macro   |                 |
-| variable  |                 |
+#### 內容
 
-### enum / macro / constant 使用全大寫
+| global 完整 |   local 簡潔    |
+| :---------: | :-------------: |
+|    class    | member function |
+|   struct    | member constant |
+|  function   | member variable |
+|    enum     |                 |
+|    macro    |                 |
+|  constant   |                 |
+|  variable   |                 |
 
-#### enum
+### 大小寫
 
-```cpp
-enum {
-    MAIN_SCENE,
-    PLAY_SCENE
-};
-```
-
-#### macro
-
-```cpp
-#define MAX 1024
-```
-
-#### constant
-
-```cpp
-const int NUM;
-```
+|  全大寫  | 首字母大寫 |  全小寫  |
+| :------: | :--------: | :------: |
+|   enum   |   class    | variable |
+|  macro   |   struct   |          |
+| constant |            |          |
