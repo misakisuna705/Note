@@ -120,3 +120,15 @@ int main(void) {
     return 0;
 }
 ```
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    for (int i = 1233456; i > 0; i /= 10) {
+        printf("%d\n", i % 10);
+    }
+
+    return 0;
+}
+```
