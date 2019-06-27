@@ -164,6 +164,22 @@ int main(void) {
 ```
 
 ```c
+#include <stdio.h>
+
+int main(void) {
+    char ch;
+
+    while ((ch = getchar()) != '\n') {
+        putchar(ch);
+
+        getchar();
+    }
+
+    return 0;
+}
+```
+
+```c
 int main(void) {
     for ( ; ; );
 
