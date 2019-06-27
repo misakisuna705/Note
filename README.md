@@ -46,7 +46,8 @@
 |  指標  |     ptr     |
 |  陣列  |     arr     |
 |  字串  |     str     |
-|  數量  | num / size  |
+|  數字  |     num     |
+|  數量  |    size     |
 |  迴圈  |  i / j / k  |
 | 前一個 | pre / prev  |
 | 這一個 |     cur     |
@@ -64,7 +65,7 @@
 
 -   輸入輸出
 
-```cpp
+```c
 #include <stdio.h>
 
 int main(void) {
@@ -74,16 +75,31 @@ int main(void) {
 }
 ```
 
--   選奇偶數
-
-```cpp
+```c
 #include <stdio.h>
 
 int main(void) {
-    int x = 0;
-    int a = 1, b = 2, c;
+    double num = 999.999;
 
-    c = (x % 2) * a + ((x + 1) % 2) * b;
+    int width, precision;
+    scanf("%d %d", &width, &precision);
+
+    printf("%*.*f\n", width, precision, num);
+
+    return 0;
+}
+```
+
+-   運算子
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int num = 0;
+    int a = 1, b = 2;
+
+    int c = (num % 2) * a + ((num + 1) % 2) * b;
 
     printf("%d\n", c);
 
