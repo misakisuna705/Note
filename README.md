@@ -132,3 +132,17 @@ int main(void) {
     return 0;
 }
 ```
+
+-   其他
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    size_t size = sizeof(int);
+
+    printf("%zu", size);
+
+    return 0;
+}
+```
