@@ -79,7 +79,7 @@ int main(void) {
 #include <stdio.h>
 
 int main(void) {
-    double num = 999.999;
+    double num = 99.99;
 
     int width, precision;
     scanf("%d %d", &width, &precision);
