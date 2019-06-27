@@ -62,16 +62,30 @@
 
 ## idom
 
+-   輸入輸出
+
+```cpp
+#include <stdio.h>
+
+int main(void) {
+    printf("%05d\n", 999);
+
+    return 0;
+}
+```
+
 -   選奇偶數
 
 ```cpp
-int main(void) {
-    int a, b, c;
+#include <stdio.h>
 
-    a = 1;
-    b = 2;
+int main(void) {
+    int x = 0;
+    int a = 1, b = 2, c;
 
     c = (x % 2) * a + ((x + 1) % 2) * b;
+
+    printf("%d\n", c);
 
     return 0;
 }
