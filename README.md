@@ -150,6 +150,20 @@ int main(void) {
 ```
 
 ```c
+#include <stdio.h>
+
+int main(void) {
+    int num;
+
+    while (scanf("%d", &num) != EOF) {
+        printf("%d\n", num);
+    }
+
+    return 0;
+}
+```
+
+```c
 int main(void) {
     for ( ; ; );
 
