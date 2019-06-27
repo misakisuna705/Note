@@ -39,19 +39,19 @@
 
 #### 常用命名
 
-|  概念  |    命名     |
-| :----: | :---------: |
-|  變數  | value / val |
-|  資料  | data / dat  |
-|  指標  |     ptr     |
-|  陣列  |     arr     |
-|  字串  |     str     |
-|  數字  |     num     |
-|  數量  |    size     |
-|  迴圈  |  i / j / k  |
-| 前一個 | pre / prev  |
-| 這一個 |     cur     |
-| 後一個 | nxt / next  |
+|   概念   |    命名     |
+| :------: | :---------: |
+|   變數   | value / val |
+|   資料   | data / dat  |
+|   指標   |     ptr     |
+|   陣列   |     arr     |
+|   字串   |     str     |
+|   數字   |     num     |
+|   數量   |    size     |
+| for 迴圈 |  i / j / k  |
+|  前一個  | pre / prev  |
+|  這一個  |     cur     |
+|  後一個  | nxt / next  |
 
 ### 排版
 
@@ -144,6 +144,14 @@ int main(void) {
     while (scanf("%d", &num) == 1) {
         printf("%d\n", num);
     }
+
+    return 0;
+}
+```
+
+```c
+int main(void) {
+    for ( ; ; );
 
     return 0;
 }
