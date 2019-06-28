@@ -349,3 +349,21 @@ int fib(int i) {
     }
 }
 ```
+
+```c
+int table[100];
+
+int fib(int i) {
+    if (i == 1 || i == 2) {
+        return 1;
+    } else {
+        if (table[i]) {
+            return table[i];
+        } else {
+            table[i] = fib(i - 1) + fib(i - 2);
+
+            return table[i];
+        }
+    }
+}
+```
