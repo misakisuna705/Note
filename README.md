@@ -135,6 +135,8 @@ int main(void) {
 
 -   迴圈
 
+-   ++i 比 i++ 好
+
 ```c
 #include <stdio.h>
 
