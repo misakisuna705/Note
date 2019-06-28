@@ -47,7 +47,7 @@
 |   陣列   |     arr     |
 |   字串   |     str     |
 |   數字   |     num     |
-|   數量   |    size     |
+|   數量   |  size / n   |
 | for 迴圈 |  i / j / k  |
 |  前一個  | pre / prev  |
 |  這一個  |     cur     |
@@ -200,6 +200,30 @@ int main(void) {
     for ( ; ; );
 
     return 0;
+}
+```
+
+-   遞迴
+
+```c
+void f(int n) {
+    if (n == 0) {
+        return;
+    } else {
+        f(n--);
+        //
+    }
+}
+```
+
+```c
+void f(int n) {
+    if (n == 0) {
+        return;
+    } else {
+        //
+        f(n--);
+    }
 }
 ```
 
