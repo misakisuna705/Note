@@ -10,6 +10,20 @@
     - [排版](#排版)
     - [註解](#註解)
 * [idiom](#idiom)
+    - [輸入輸出](#輸入輸出)
+        + [空格補 0](#空格補-0)
+        + [自訂格式符](#自訂格式符)
+        + [忽略格式符](#忽略格式符)
+        + [連續輸入](#連續輸入)
+    - [迴圈](#迴圈)
+        + [++i 比 i++ 好](#i-比-i-好)
+        + [無窮迴圈](#無窮迴圈)
+    - [遞迴](#遞迴)
+    - [其他](#其他)
+        + [sizeof 型態](#sizeof-型態)
+        + [奇偶選擇](#奇偶選擇)
+        + [取位數](#取位數)
+        + [gcd](#gcd)
 
 <!-- vim-markdown-toc -->
 
@@ -63,7 +77,9 @@
 
 ## idiom
 
--   輸入輸出
+### 輸入輸出
+
+#### 空格補 0
 
 ```c
 #include <stdio.h>
@@ -74,6 +90,8 @@ int main(void) {
     return 0;
 }
 ```
+
+#### 自訂格式符
 
 ```c
 #include <stdio.h>
@@ -90,6 +108,8 @@ int main(void) {
 }
 ```
 
+#### 忽略格式符
+
 ```c
 #include <stdio.h>
 
@@ -104,38 +124,7 @@ int main(void) {
 }
 ```
 
--   運算子
-
-```c
-#include <stdio.h>
-
-int main(void) {
-    int num = 0;
-    int a = 1, b = 2;
-
-    int c = (num % 2) * a + ((num + 1) % 2) * b;
-
-    printf("%d\n", c);
-
-    return 0;
-}
-```
-
-```c
-#include <stdio.h>
-
-int main(void) {
-    for (int i = 1233456; i > 0; i /= 10) {
-        printf("%d\n", i % 10);
-    }
-
-    return 0;
-}
-```
-
--   迴圈
-
--   ++i 比 i++ 好
+#### 連續輸入
 
 ```c
 #include <stdio.h>
@@ -195,6 +184,12 @@ int main(void) {
 }
 ```
 
+### 迴圈
+
+#### ++i 比 i++ 好
+
+#### 無窮迴圈
+
 ```c
 int main(void) {
     for ( ; ; );
@@ -203,7 +198,7 @@ int main(void) {
 }
 ```
 
--   遞迴
+### 遞迴
 
 ```c
 void f(int n) {
@@ -227,7 +222,9 @@ void f(int n) {
 }
 ```
 
--   其他
+### 其他
+
+#### sizeof 型態
 
 ```c
 #include <stdio.h>
@@ -240,3 +237,48 @@ int main(void) {
     return 0;
 }
 ```
+
+#### 奇偶選擇
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int num = 0;
+    int a = 1, b = 2;
+
+    int c = (num % 2) * a + ((num + 1) % 2) * b;
+
+    printf("%d\n", c);
+
+    return 0;
+}
+```
+
+#### 取位數
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    for (int i = 1233456; i > 0; i /= 10) {
+        printf("%d\n", i % 10);
+    }
+
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+
+void bin(int i) {
+    if (i == 1) {
+        printf("%d", i % 2);
+    } else {
+        bin(i / 2);
+    }
+}
+```
+
+#### gcd
