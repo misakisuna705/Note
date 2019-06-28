@@ -25,6 +25,7 @@
         + [取位數](#取位數)
         + [gcd](#gcd)
         + [Fibonacci](#fibonacci)
+        + [快速冪](#快速冪)
 
 <!-- vim-markdown-toc -->
 
@@ -363,6 +364,24 @@ int fib(int i) {
             table[i] = fib(i - 1) + fib(i - 2);
 
             return table[i];
+        }
+    }
+}
+```
+
+#### 快速冪
+
+```c
+int power(int a, int n) {
+    if (n == 1) {
+        return a;
+    } else {
+        int sqrt = power(a,n/2);
+
+        if (n % 2 == 0) {
+            return sqrt * sqrt;
+        } else {
+            return a * sqrt * sqrt;
         }
     }
 }
