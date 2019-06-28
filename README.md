@@ -24,6 +24,7 @@
         + [奇偶選擇](#奇偶選擇)
         + [取位數](#取位數)
         + [gcd](#gcd)
+        + [Fibonacci](#fibonacci)
 
 <!-- vim-markdown-toc -->
 
@@ -282,3 +283,40 @@ void bin(int i) {
 ```
 
 #### gcd
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int a, b;
+    scanf("%d %d", &a, &b);
+
+    while(a && b) {
+        if (a > b) {
+            a = a % b;
+        } else {
+            b = b % a;
+        }
+    }
+
+    if (a) {
+        printf("%d\n", a);
+    } else {
+        printf("%d\n", b);
+    }
+
+    return 0;
+}
+```
+
+```c
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+```
+
+#### Fibonacci
