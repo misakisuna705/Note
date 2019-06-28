@@ -167,6 +167,20 @@ int main(void) {
 #include <stdio.h>
 
 int main(void) {
+    int ch;
+
+    while ((ch = getchar()) != EOF) {
+        //
+    }
+
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+
+int main(void) {
     char ch;
 
     while ((ch = getchar()) != '\n') {
