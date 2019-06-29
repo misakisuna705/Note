@@ -27,6 +27,7 @@
         + [Fibonacci](#fibonacci)
         + [快速冪](#快速冪)
         + [Tower of Honoi](#tower-of-honoi)
+        + [換銅板](#換銅板)
 
 <!-- vim-markdown-toc -->
 
@@ -73,6 +74,8 @@
 |    數    | num / n / size |
 |   總數   |     total      |
 |   剩餘   |     remain     |
+|   索引   |  index / idx   |
+|   計數   |  count / cnt   |
 
 ### 排版
 
@@ -404,6 +407,26 @@ void hanoi(int a, int b, int c, int n) {
         hanoi(a, c, b, n - 1);
         printf("%d %d %d\n", n, a, b);
         hanoi(c, b, a, n - 1);
+    }
+}
+```
+
+#### 換銅板
+
+```c
+void change(int remain, int idx) {
+    if (remain < 0 || idx >= n) {
+        return;
+    } else if (remain == 0) {
+        show(n);
+    } else {
+        change(remain, idx + 1);
+
+        ++num[idx];
+
+        change(remain - table[idx], idx);
+
+        --num[idx];
     }
 }
 ```
