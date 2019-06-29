@@ -26,6 +26,7 @@
         + [gcd](#gcd)
         + [Fibonacci](#fibonacci)
         + [快速冪](#快速冪)
+        + [Tower of Honoi](#tower-of-honoi)
 
 <!-- vim-markdown-toc -->
 
@@ -383,6 +384,22 @@ int power(int a, int n) {
         } else {
             return a * sqrt * sqrt;
         }
+    }
+}
+```
+
+#### Tower of Honoi
+
+```c
+#include <stdio.h>
+
+void hanoi(int a, int b, int c, int n) {
+    if (n == 0) {
+        return ;
+    } else {
+        hanoi(a, c, b, n - 1);
+        printf("%d %d %d\n", n, a, b);
+        hanoi(c, b, a, n - 1);
     }
 }
 ```
