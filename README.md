@@ -56,19 +56,23 @@
 
 #### 常用命名
 
-|   概念   |    命名     |
-| :------: | :---------: |
-|   變數   | value / val |
-|   資料   | data / dat  |
-|   指標   |     ptr     |
-|   陣列   |     arr     |
-|   字串   |     str     |
-|   數字   |     num     |
-|   數量   |  size / n   |
-| for 迴圈 |  i / j / k  |
-|  前一個  | pre / prev  |
-|  這一個  |     cur     |
-|  後一個  | nxt / next  |
+|   概念   |      命名      |
+| :------: | :------------: |
+|   變數   |  value / val   |
+|   資料   |   data / dat   |
+|   指標   |      ptr       |
+|   陣列   |      arr       |
+|   字串   |      str       |
+| for 迴圈 |   i / j / k    |
+|  前一個  |   pre / prev   |
+|  這一個  |      cur       |
+|  後一個  |   nxt / next   |
+|   旗標   |      flag      |
+|   參考   |     table      |
+|   紀錄   |      mark      |
+|    數    | num / n / size |
+|   總數   |     total      |
+|   剩餘   |     remain     |
 
 ### 排版
 
