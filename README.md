@@ -84,10 +84,15 @@
 |   矩陣   |     matrix     |
 |    列    |      row       |
 |    行    |      col       |
+|   創建   |   create();    |
 |   設置   |     set()      |
 |   取得   |     get()      |
+|   查找   |     find()     |
 |   計算   |     cal()      |
 |   字母   |       ch       |
+|    頭    |      head      |
+|    中    |      mid       |
+|    尾    |      tail      |
 
 ### 排版
 
@@ -538,3 +543,21 @@ int cal(void) {
 ```
 
 #### Binary Search
+
+```c
+void find(int num, int head, int tail) {
+    int mid = (head + tail) / 2;
+
+    if (head > tail) {
+        printf("NULL");
+    } else if (dat[mid] == num) {
+        printf("%d\n", mid);
+    } else {
+        if (dat[mid] > num) {
+            find(num, head, mid - 1);
+        } else {
+            find(num, mid + 1, tail);
+        }
+    }
+}
+```
