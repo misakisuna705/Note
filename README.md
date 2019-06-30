@@ -30,6 +30,7 @@
         + [換銅板](#換銅板)
         + [城堡](#城堡)
         + [皇后](#皇后)
+        + [騎士](#騎士)
 
 <!-- vim-markdown-toc -->
 
@@ -81,6 +82,8 @@
 |   矩陣   |     matrix     |
 |    列    |      row       |
 |    行    |      col       |
+|   設置   |      set       |
+|   取得   |      get       |
 
 ### 排版
 
@@ -466,6 +469,31 @@ void set_chess(int row) {
                 board[row] = i;
                 set_chess(row + 1);
             }
+        }
+    }
+}
+```
+
+#### 騎士
+
+```c
+void set_chess(int row, int col, int num) {
+    if (num == N * N + 1) {
+        show();
+    } else {
+        if (valid(row, col)) {
+            board[row][col] = num;
+
+            set_chess(row + 2, col + 1, num + 1);
+            set_chess(row + 2, col - 1, num + 1);
+            set_chess(row - 2, col + 1, num + 1);
+            set_chess(row - 2, col - 1, num + 1);
+            set_chess(row + 1, col + 2, num + 1);
+            set_chess(row + 1, col - 2, num + 1);
+            set_chess(row - 1, col + 2, num + 1);
+            set_chess(row - 1, col - 2, num + 1);
+
+            board[row][col] = 0;
         }
     }
 }
