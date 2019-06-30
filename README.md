@@ -31,6 +31,8 @@
         + [城堡](#城堡)
         + [皇后](#皇后)
         + [騎士](#騎士)
+        + [前序](#前序)
+        + [Binary Search](#binary-search)
 
 <!-- vim-markdown-toc -->
 
@@ -82,8 +84,10 @@
 |   矩陣   |     matrix     |
 |    列    |      row       |
 |    行    |      col       |
-|   設置   |      set       |
-|   取得   |      get       |
+|   設置   |     set()      |
+|   取得   |     get()      |
+|   計算   |     cal()      |
+|   字母   |       ch       |
 
 ### 排版
 
@@ -498,3 +502,39 @@ void set_chess(int row, int col, int num) {
     }
 }
 ```
+
+#### 前序
+
+```c
+int cal(void) {
+    char ch = getchar();
+
+    if (isdigit(ch)) {
+        int ans;
+
+        ungetc(ch, stdin);
+        scanf("%d", &ans);
+
+        return ans;
+    } else if (ch == '+') {
+        int a = cal();
+        int b = cal();
+
+        return a + b;
+    } else if (ch == '-') {
+        int a = cal();
+        int b = cal();
+
+        return a - b;
+    } else if (ch == '*') {
+        int a = cal();
+        int b = cal();
+
+        return a * b;
+    } else {
+        return cal();
+    }
+}
+```
+
+#### Binary Search
