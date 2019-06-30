@@ -33,6 +33,7 @@
         + [騎士](#騎士)
         + [前序](#前序)
         + [Binary Search](#binary-search)
+        + [Merge Sort](#merge-sort)
 
 <!-- vim-markdown-toc -->
 
@@ -62,37 +63,43 @@
 
 #### 常用命名
 
-|   概念   |      命名      |
-| :------: | :------------: |
-|   變數   |  value / val   |
-|   資料   |   data / dat   |
-|   指標   |      ptr       |
-|   陣列   |      arr       |
-|   字串   |      str       |
-| for 迴圈 |   i / j / k    |
-|  前一個  |   pre / prev   |
-|  這一個  |      cur       |
-|  後一個  |   nxt / next   |
-|   旗標   |      flag      |
-|   參考   |     table      |
-|   紀錄   |      mark      |
-|    數    | num / n / size |
-|   總數   |     total      |
-|   剩餘   |     remain     |
-|   索引   |  index / idx   |
-|   計數   |  count / cnt   |
-|   矩陣   |     matrix     |
-|    列    |      row       |
-|    行    |      col       |
-|   創建   |   create();    |
-|   設置   |     set()      |
-|   取得   |     get()      |
-|   查找   |     find()     |
-|   計算   |     cal()      |
-|   字母   |       ch       |
-|    頭    |      head      |
-|    中    |      mid       |
-|    尾    |      tail      |
+|   概念   |             命名              |
+| :------: | :---------------------------: |
+|   變數   |          value / val          |
+|   資料   |          data / dat           |
+|   指標   |              ptr              |
+|   陣列   |              arr              |
+|   字串   |              str              |
+| for 迴圈 |           i / j / k           |
+|  前一個  |          pre / prev           |
+|  這一個  |              cur              |
+|  後一個  |          nxt / next           |
+|   旗標   |             flag              |
+|   參考   |             table             |
+|   紀錄   |             mark              |
+|    數    | num / n / size / len / length |
+|   總數   |             total             |
+|   剩餘   |            remain             |
+|   索引   |          index / idx          |
+|   計數   |          count / cnt          |
+|   矩陣   |            matrix             |
+|    列    |              row              |
+|    行    |              col              |
+|   創建   |           create();           |
+|   設置   |             set()             |
+|   取得   |             get()             |
+|   排序   |            sort()             |
+|   查找   |            find()             |
+|   計算   |             cal()             |
+|   字母   |              ch               |
+|    頭    |             head              |
+|    中    |              mid              |
+|    尾    |             tail              |
+|    左    |             left              |
+|    右    |             right             |
+|   最大   |              max              |
+|   最小   |              min              |
+|   緩衝   |              buf              |
 
 ### 排版
 
@@ -558,6 +565,59 @@ void find(int num, int head, int tail) {
         } else {
             find(num, mid + 1, tail);
         }
+    }
+}
+```
+
+#### Merge Sort
+
+```c
+void sort(int left, int right) {
+    if (left > right) {
+        return;
+    } else {
+        int mid = (left + right) / 2;
+
+        sort(left, mid);
+        sort(mid + 1, right);
+
+        merge(arr + left, mid - left + 1, arr + mid + 1, right - mid);
+
+        for (int i = 0; i < right - left + 1; i++) {
+            arr[left + i] = buf[i];
+        }
+    }
+}
+
+void merge(int arr_1[], int len_1, int arr_2[], int len_2) {
+    int i = 0, j = 0, k = 0;
+
+    while (i < len_1 && j < len_2) {
+        if (arr_1[i] < arr_2[j]) {
+            buf[k] = arr_1[i];
+
+            i++;
+            k++;
+        } else {
+            buf[k] = arr_2[j];
+
+            j++;
+            k++;
+        }
+    }
+
+    while (i < len_1) {
+        buf[k] = arr_1[i];
+
+        i++;
+        k++;
+    }
+
+    while (j < len_2) {
+        buf[k] = arr_2[j];
+
+        j++;
+        k++;
     }
 }
 ```
