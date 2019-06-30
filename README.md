@@ -29,6 +29,7 @@
         + [Tower of Honoi](#tower-of-honoi)
         + [換銅板](#換銅板)
         + [城堡](#城堡)
+        + [皇后](#皇后)
 
 <!-- vim-markdown-toc -->
 
@@ -447,6 +448,23 @@ void set_chess(int row) {
                 board[row][i] = 1;
                 set_chess(row + 1);
                 board[row][i] = 0;
+            }
+        }
+    }
+}
+```
+
+#### 皇后
+
+```c
+void set_chess(int row) {
+    if (row == N) {
+        show();
+    } else {
+        for (int i = 0; i < N; ++i) {
+            if (valid(row, i)) {
+                board[row] = i;
+                set_chess(row + 1);
             }
         }
     }
