@@ -28,6 +28,7 @@
         + [快速冪](#快速冪)
         + [Tower of Honoi](#tower-of-honoi)
         + [換銅板](#換銅板)
+        + [城堡](#城堡)
 
 <!-- vim-markdown-toc -->
 
@@ -76,6 +77,9 @@
 |   剩餘   |     remain     |
 |   索引   |  index / idx   |
 |   計數   |  count / cnt   |
+|   矩陣   |     matrix     |
+|    列    |      row       |
+|    行    |      col       |
 
 ### 排版
 
@@ -427,6 +431,24 @@ void change(int remain, int idx) {
         change(remain - table[idx], idx);
 
         --num[idx];
+    }
+}
+```
+
+#### 城堡
+
+```c
+void set_chess(int row) {
+    if (row > N) {
+        show();
+    } else {
+        for (int i = 1; i <= N; ++i) {
+            if (valid(row, i)) {
+                board[row][i] = 1;
+                set_chess(row + 1);
+                board[row][i] = 0;
+            }
+        }
     }
 }
 ```
